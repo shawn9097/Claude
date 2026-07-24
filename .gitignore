@@ -1,0 +1,38 @@
+# Claude Code — local-only files (never commit; cloud sessions use committed config)
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/worktrees/
+.claude/agent-memory-local/
+
+# Secrets — use .env.example to document required variables
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Node
+node_modules/
+dist/
+build/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Editors & OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
