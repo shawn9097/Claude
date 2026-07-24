@@ -1,5 +1,7 @@
 # Claude Code Repo Setup Questionnaire
 
+> **Status: answered.** These questions were answered interactively in-session (July 2026) and the setup was built from them. The resulting decisions — including defaults applied where no answer was given — are recorded in [`SETUP_DECISIONS.md`](SETUP_DECISIONS.md). This file is kept as a reference for future re-evaluation.
+
 This questionnaire was distilled from the full Claude Code documentation (code.claude.com/docs). Your answers drive how this repo gets scaffolded: `CLAUDE.md`, `.claude/settings.json` (permissions + hooks), skills, subagents, `.mcp.json`, `.gitignore`, CI workflows, and cloud environment guidance.
 
 **How to answer:** fill in the `> Answer:` lines (or reply in the PR/session). The ★ starred questions (15) are the load-bearing decisions — answer at least those and documented best-practice defaults will be applied everywhere else, with every assumption noted.

@@ -1,0 +1,4 @@
+# Files copied into new git worktrees (parallel Claude sessions) despite being gitignored.
+# Keeps local env config working in worktree sessions.
+.env
+.env.*
