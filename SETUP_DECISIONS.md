@@ -1,6 +1,6 @@
 # Setup Decisions
 
-Decisions made during the initial Claude Code setup of this repo (July 2026), based on the answers to `SETUP_QUESTIONNAIRE.md`. When changing the setup later, update this file so future sessions know what was intentional.
+Decisions made during the initial Claude Code setup of this repo (July 2026), drawn from Shawn's answers in conversation and from the context docs in `context/`. When changing the setup later, update this file so future sessions know what was intentional.
 
 ## Decisions from your answers
 
