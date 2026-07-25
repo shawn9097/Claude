@@ -20,12 +20,11 @@ export default function Home() {
           For residential contractors
         </p>
         <h1 className="font-serif text-5xl md:text-6xl font-semibold leading-tight mb-6 tracking-tight">
-          Where good deals{" "}
-          <em className="text-[#A57628]">come home.</em>
+          Where good deals <em className="text-[#A57628]">come home.</em>
         </h1>
         <p className="text-lg text-[#3A4148] max-w-xl mx-auto mb-10 leading-relaxed">
-          You sent the estimate. Then life happened. Warmside follows up for
-          you — in your voice, on your schedule — so the jobs you earned don't
+          You sent the estimate. Then life happened. Warmside follows up for you
+          — in your voice, on your schedule — so the jobs you earned don&apos;t
           go to the guy who remembered to call back.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -48,7 +47,10 @@ export default function Home() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="bg-[#F4ECD9] border-y border-[#E0D3B2] py-20">
+      <section
+        id="how-it-works"
+        className="bg-[#F4ECD9] border-y border-[#E0D3B2] py-20"
+      >
         <div className="max-w-4xl mx-auto px-6">
           <p className="font-mono text-xs tracking-widest uppercase text-[#6B7178] mb-4 text-center">
             How it works
@@ -75,8 +77,12 @@ export default function Home() {
               },
             ].map(({ step, title, body }) => (
               <div key={step} className="text-center">
-                <div className="font-mono text-sm text-[#C8923A] mb-3">{step}</div>
-                <h3 className="font-serif text-xl font-semibold mb-3">{title}</h3>
+                <div className="font-mono text-sm text-[#C8923A] mb-3">
+                  {step}
+                </div>
+                <h3 className="font-serif text-xl font-semibold mb-3">
+                  {title}
+                </h3>
                 <p className="text-[#3A4148] text-sm leading-relaxed">{body}</p>
               </div>
             ))}
@@ -93,8 +99,8 @@ export default function Home() {
           Two tiers. No surprises.
         </h2>
         <p className="text-center text-[#3A4148] mb-12">
-          If Warmside can&apos;t prove it recovered a job you would have lost, you
-          don&apos;t pay for that month.
+          If Warmside can&apos;t prove it recovered a job you would have lost,
+          you don&apos;t pay for that month.
         </p>
         <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {[
@@ -102,14 +108,25 @@ export default function Home() {
               name: "Standard",
               price: "$129",
               limit: "Up to 100 estimates/mo",
-              features: ["All 6 trade sequences", "Voice Twin personalisation", "SMS + email follow-up", "Real-time reply forwarding", "ROI dashboard"],
+              features: [
+                "All 6 trade sequences",
+                "Voice Twin personalisation",
+                "SMS + email follow-up",
+                "Real-time reply forwarding",
+                "ROI dashboard",
+              ],
               cta: "Start Standard",
             },
             {
               name: "Volume",
               price: "$249",
               limit: "Unlimited estimates",
-              features: ["Everything in Standard", "Unlimited estimates", "Quarterly performance calls", "Priority support"],
+              features: [
+                "Everything in Standard",
+                "Unlimited estimates",
+                "Quarterly performance calls",
+                "Priority support",
+              ],
               cta: "Start Volume",
             },
           ].map(({ name, price, limit, features, cta }) => (
@@ -121,12 +138,16 @@ export default function Home() {
                 {name}
               </div>
               <div className="font-serif text-4xl font-semibold mb-1">
-                {price}<span className="text-lg font-normal text-[#6B7178]">/mo</span>
+                {price}
+                <span className="text-lg font-normal text-[#6B7178]">/mo</span>
               </div>
               <div className="text-sm text-[#6B7178] mb-6">{limit}</div>
               <ul className="space-y-2 mb-8">
                 {features.map((f) => (
-                  <li key={f} className="text-sm text-[#3A4148] flex items-start gap-2">
+                  <li
+                    key={f}
+                    className="text-sm text-[#3A4148] flex items-start gap-2"
+                  >
                     <span className="text-[#C8923A] mt-0.5">·</span>
                     {f}
                   </li>

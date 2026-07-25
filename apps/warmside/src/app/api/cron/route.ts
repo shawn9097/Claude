@@ -4,7 +4,7 @@ import { SEQUENCES, applyVariables } from "@/lib/sequences";
 import { applyVoiceTwin } from "@/lib/claude";
 import { sendSMS } from "@/lib/twilio";
 import { sendEmail } from "@/lib/resend";
-import type { Campaign, Contractor, Prospect, TradeNiche } from "@/types";
+import type { Contractor, Prospect, TradeNiche } from "@/types";
 
 // This endpoint is called by Vercel Cron (configured in vercel.json) once per day.
 // It finds all ACTIVE campaigns with next_touch_at <= now, sends the next touch,
@@ -66,7 +66,9 @@ export async function GET(req: NextRequest) {
 
     // Apply variables then optionally apply Voice Twin
     let body = applyVariables(touch.body, vars);
-    let subject = touch.subject ? applyVariables(touch.subject, vars) : undefined;
+    const subject = touch.subject
+      ? applyVariables(touch.subject, vars)
+      : undefined;
 
     if (contractor.voice_dna) {
       try {
@@ -111,7 +113,9 @@ export async function GET(req: NextRequest) {
 
     if (nextTouch) {
       const nextAt = new Date();
-      nextAt.setDate(nextAt.getDate() + (nextTouch.dayOffset - touch.dayOffset));
+      nextAt.setDate(
+        nextAt.getDate() + (nextTouch.dayOffset - touch.dayOffset),
+      );
       await db
         .from("campaigns")
         .update({
