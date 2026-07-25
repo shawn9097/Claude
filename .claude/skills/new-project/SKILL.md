@@ -1,9 +1,32 @@
 ---
 name: new-project
-description: Scaffold a new project in this workspace — a TypeScript/Next.js app in apps/ or a Python script/tool in scripts/ — with the workspace's standard tooling wired up.
+description: Scaffold a new project of any kind in this workspace — a content/brand/client project in projects/, a TypeScript/Next.js app in apps/, or a Python tool in scripts/.
 ---
 
-Scaffold a new project. If the user didn't specify, ask for: project name, and whether it's an app (`apps/<name>/`, TypeScript + Next.js) or a script/tool (`scripts/<name>/`, Python + uv).
+Scaffold a new project. Ask for the name and what kind it is — one question, not a form:
+
+| Kind                                            | Goes in            | Example                            |
+| ----------------------------------------------- | ------------------ | ---------------------------------- |
+| Content, brand, music, strategy, or client work | `projects/<name>/` | underdog-city, a client engagement |
+| Deployable web app                              | `apps/<name>/`     | a Next.js site                     |
+| Automation or tooling                           | `scripts/<name>/`  | a Python script                    |
+
+Most new things are the **first kind**. Don't default to code. If it's client work or a creative project, `projects/` is right even if code shows up later — it can grow an `apps/` sibling then.
+
+## Any project (`projects/<name>/`)
+
+Create `projects/<name>/CLAUDE.md`. That file is the whole scaffold — it loads automatically whenever Claude works in that folder, so it has to carry everything a cold session needs:
+
+- **What this is**, in two sentences. Include Shawn's relationship to it (his own thing / client / partner / experiment) — this matters more than anything else and is the thing most often left ambiguous.
+- **The goal**, and how success is measured.
+- **Voice**, if it differs from `context/how-i-talk.md`. If someone else's brand voice applies, say whose voice wins when they conflict.
+- **Key facts** Claude must not invent — names, dates, prices, URLs, channels.
+- **What's blocked or undecided**, so `/next` can reason about it.
+- **Open questions for Shawn**, as a list. Better to record an unknown than to guess.
+
+Add subfolders only when there's something to put in them (`shot-lists/`, `drafts/`, `research/`). Don't scaffold empty structure.
+
+If the project has docs in Google Drive, mirror them in (see `/sync-context`), decode with `base64 -d` in bash rather than the Write tool, and add their paths to `.prettierignore` so they stay byte-identical.
 
 ## TypeScript app (`apps/<name>/`)
 
@@ -20,8 +43,11 @@ Scaffold a new project. If the user didn't specify, ask for: project name, and w
 3. Create `tests/test_smoke.py` with a trivial passing test.
 4. Add ruff config to `pyproject.toml` (defaults are fine; just ensure the section exists so tooling is explicit).
 
-## Both
+## Code projects, additionally
 
-- Create `<project>/CLAUDE.md` documenting: what the project is (one line), the exact dev/test/lint commands, and any deviations from workspace defaults.
-- Verify: run the project's test command and lint command; both must pass.
-- Commit on a feature branch with a `feat:` Conventional Commit.
+- Create `<project>/CLAUDE.md` documenting what it is, the exact dev/test/lint commands, and any deviations from workspace defaults.
+- Verify: run the test command and the lint command; both must pass.
+
+## Finally
+
+Commit on a feature branch with a `feat:` Conventional Commit. Then tell Shawn the one next action for the new project — not a list of everything it still needs.

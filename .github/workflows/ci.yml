@@ -17,8 +17,8 @@ jobs:
       - id: find
         name: Find projects
         run: |
-          node_dirs=$(find apps scripts -maxdepth 2 -name package.json -not -path '*/node_modules/*' 2>/dev/null | xargs -r -n1 dirname | jq -R . | jq -sc .)
-          python_dirs=$(find apps scripts -maxdepth 2 -name pyproject.toml 2>/dev/null | xargs -r -n1 dirname | jq -R . | jq -sc .)
+          node_dirs=$(find apps scripts projects -maxdepth 2 -name package.json -not -path '*/node_modules/*' 2>/dev/null | xargs -r -n1 dirname | jq -R . | jq -sc .)
+          python_dirs=$(find apps scripts projects -maxdepth 2 -name pyproject.toml 2>/dev/null | xargs -r -n1 dirname | jq -R . | jq -sc .)
           echo "node_dirs=${node_dirs:-[]}" >> "$GITHUB_OUTPUT"
           echo "python_dirs=${python_dirs:-[]}" >> "$GITHUB_OUTPUT"
 
