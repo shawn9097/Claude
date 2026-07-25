@@ -12,6 +12,35 @@ Two rules baked into the ordering:
 
 ---
 
+## 🛑 Correction — 2026-07-25: rule 1 is already being violated
+
+This checklist assumed `underdog-city-v5` was CLI-only and that connecting it
+to git was a future step (B2). **It is already connected** to
+`shawn9097/Claude` with production branch `main` — verified via the Vercel API
+2026-07-25. The merge of PR #4 fired a **production** build at 04:37 UTC that
+ended in **ERROR** (`dpl_Ca2N5Psp8eiqefp73FnqkxuUsTfe`).
+
+`theunderdogcity.com` is fine right now — it still serves the 2026-07-14 CLI
+deploy (`dpl_GdoLNK4tk8pYhyDxJ8HRPmB7uLHN`, `READY`), because Vercel keeps the
+last good production deployment when a build fails.
+
+**The failing build is the safety net. Do not fix it before B1.** Two settings
+are wrong, and both would have to be corrected for a git build to succeed:
+Root Directory is unset (so the build runs at the repo root, which has no
+`package.json`), and the Build Command override calls
+`scripts/fetch-assets.mjs` while this repo has `scripts/make-assets.mjs`.
+
+Fixing only the build command fails differently and harmlessly. Fixing both —
+**exactly what B2 below used to instruct** — turns the build green and
+publishes the _older_ git copy over the live site, days before launch. B1
+(recover the true source) must land first. See `apps/underdog-city/CLAUDE.md`.
+
+Needs a decision from Shawn: leave it red through launch (safe, ugly), or
+disconnect the git integration until 08/01 (safest, one dashboard click,
+removes the trap entirely).
+
+---
+
 ## A. Safe now (before 07/31)
 
 - [ ] **A0. Confirm a stranger can load theunderdogcity.com.**
@@ -51,9 +80,9 @@ Two rules baked into the ordering:
       CLI deploys). Archiving is read-only, reversible, and no default-branch
       fixes are needed on archived repos._
 
-- [ ] **A4. Merge the consolidation PR** (the one that added `apps/` to
+- [x] **A4. Merge the consolidation PR** (the one that added `apps/` to
       `shawn9097/Claude`). Everything in section B depends on the apps living
-      in `main`.
+      in `main`. — **Done:** PR #3 merged 2026-07-25 03:39 UTC (`a9d9249`).
 
 - [ ] **A5. Repoint the `warmside` Vercel project.**
       Vercel → `warmside` → Settings → Git → disconnect `shawn9097/SBB`,
@@ -80,11 +109,16 @@ Two rules baked into the ordering:
       Cenotaph Records footer). Download it / point a Claude session at it to
       reconcile into `apps/underdog-city`.
 
-- [ ] **B2. Connect `underdog-city-v5` to git.**
-      Settings → Git → connect `shawn9097/Claude`, Root Directory =
-      `apps/underdog-city`, Production Branch = `main`.
-      _After this, pushes deploy the site and CLI-deploy drift can't happen
-      again._
+- [ ] **B2. ~~Connect `underdog-city-v5` to git.~~ Already connected — fix the
+      build command instead.**
+      The connection exists (`shawn9097/Claude`, Production Branch `main`).
+      What's left is two settings, and doing them is what arms the trap — so
+      only after B1: set **Root Directory** = `apps/underdog-city` (currently
+      unset), and change the **Build Command** override from
+      `node scripts/fetch-assets.mjs && next build` to match whatever the
+      reconciled app actually ships (plain `next build` works for this repo).
+      **Only after B1.** Until then the failing build is deliberately
+      protecting the live site — see the correction block at the top.
 
 - [ ] **B3. Archive the old `underdogcity` Vercel project** (apex was already
       removed in A1; nothing references it anymore).

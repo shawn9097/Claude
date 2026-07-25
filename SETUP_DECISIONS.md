@@ -18,7 +18,7 @@ Decisions made during the initial Claude Code setup of this repo (July 2026), dr
 | Plugins         | typescript-lsp, pyright-lsp, security-guidance only                                                                                                   | `.claude/settings.json`              |
 | MCP             | No committed `.mcp.json` — rely on claude.ai connectors (Supabase, Vercel, GitHub already connected)                                                  | —                                    |
 | GitHub          | GitHub App only; no @claude Actions workflows                                                                                                         | —                                    |
-| Reviews         | Local `/code-review` + code-reviewer subagent before PRs                                                                                              | `CLAUDE.md`, `.claude/skills/ship/`  |
+| Reviews         | code-reviewer subagent (or built-in `/review`) before PRs — no custom `/code-review` skill                                                            | `CLAUDE.md`, `.claude/skills/ship/`  |
 | CI              | Free GitHub Actions: lint + test per project, auto-discovers projects, skips gracefully while repo is empty                                           | `.github/workflows/ci.yml`           |
 | Cost posture    | Balanced: 200K context cap (`CLAUDE_CODE_DISABLE_1M_CONTEXT=1`), prefer single-file test runs while iterating, delegate exploration to Haiku subagent | `.claude/settings.json`, `CLAUDE.md` |
 | Cloud network   | Trusted network access (set in claude.ai environment settings — not repo-configurable)                                                                | manual step                          |

@@ -34,11 +34,11 @@ A project only moves to `apps/` or `scripts/` when it's actually code that build
 
 All three have both halves: `projects/<name>/` for strategy, brand, and context; `apps/<name>/` for the code. **Read the app's own `CLAUDE.md` before touching it** — each one documents what's actually deployed, which is not the same as what's in git.
 
-| Project         | What it is                                          | Live at                    | Deploy status                                                                         |
-| --------------- | --------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------- |
-| `underdog-city` | Dark-fantasy transmedia site (album **07.31.2026**) | theunderdogcity.com        | Vercel `underdog-city-v5`, CLI-deployed — **not yet git-connected; frozen until 8/1** |
-| `warmside`      | Contractor estimate-follow-up SaaS                  | warmside.app (stale build) | Vercel `warmside` mis-wired to old `SBB` repo — repoint pending                       |
-| `luke-mcbroom`  | Static personal-training site                       | lukemcbroom.com            | Cloudflare Pages, still deploys from the **old** repo — edits here don't go live      |
+| Project         | What it is                                          | Live at                    | Deploy status                                                                                                                                                                                            |
+| --------------- | --------------------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `underdog-city` | Dark-fantasy transmedia site (album **07.31.2026**) | theunderdogcity.com        | Vercel `underdog-city-v5` — **git-connected to this repo, prod branch `main`. Production builds are FAILING and that is protecting the live site. Read `apps/underdog-city/CLAUDE.md` before anything.** |
+| `warmside`      | Contractor estimate-follow-up SaaS                  | warmside.app (stale build) | Vercel `warmside` mis-wired to old `SBB` repo — repoint pending                                                                                                                                          |
+| `luke-mcbroom`  | Static personal-training site                       | lukemcbroom.com            | Cloudflare Pages, still deploys from the **old** repo — edits here don't go live                                                                                                                         |
 
 The code was consolidated from separate repos (`Warmside`, `SBB`, `luke-mcbroom-personal-training`) in July 2026; the old repos are being archived, not deleted. Dashboard steps to finish the move live in `CLEANUP_CHECKLIST.md`.
 
@@ -72,7 +72,7 @@ Casual, conversational, warm — like talking to a friend. Never corporate. Neve
 - TypeScript: strict mode, npm, ESLint + Prettier, Vitest. Python: uv, ruff, pytest.
 - Commits: Conventional Commits (`feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:`).
 - Branches: `claude/*` or `feat/*`; PRs into `main`. Never push to `main` without explicit approval.
-- Run `/code-review` before opening a PR; fix confirmed findings.
+- Review before opening a PR; fix confirmed findings. Use the `code-reviewer` subagent (what `/ship` runs) or the built-in `/review`. There is no `/code-review` skill in this repo.
 - Prefer a single test file while iterating; full suite before finishing.
 
 ## Gotchas
