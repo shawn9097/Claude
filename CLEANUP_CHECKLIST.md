@@ -51,9 +51,9 @@ Two rules baked into the ordering:
       CLI deploys). Archiving is read-only, reversible, and no default-branch
       fixes are needed on archived repos._
 
-- [ ] **A4. Merge the consolidation PR** (the one that added `apps/` to
+- [x] **A4. Merge the consolidation PR** (the one that added `apps/` to
       `shawn9097/Claude`). Everything in section B depends on the apps living
-      in `main`.
+      in `main`. — **Done:** PR #3 merged 2026-07-25 03:39 UTC (`a9d9249`).
 
 - [ ] **A5. Repoint the `warmside` Vercel project.**
       Vercel → `warmside` → Settings → Git → disconnect `shawn9097/SBB`,

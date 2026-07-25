@@ -72,7 +72,7 @@ Casual, conversational, warm — like talking to a friend. Never corporate. Neve
 - TypeScript: strict mode, npm, ESLint + Prettier, Vitest. Python: uv, ruff, pytest.
 - Commits: Conventional Commits (`feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:`).
 - Branches: `claude/*` or `feat/*`; PRs into `main`. Never push to `main` without explicit approval.
-- Run `/code-review` before opening a PR; fix confirmed findings.
+- Review before opening a PR; fix confirmed findings. Use the `code-reviewer` subagent (what `/ship` runs) or the built-in `/review`. There is no `/code-review` skill in this repo.
 - Prefer a single test file while iterating; full suite before finishing.
 
 ## Gotchas
