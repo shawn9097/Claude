@@ -24,12 +24,16 @@ ended in **ERROR** (`dpl_Ca2N5Psp8eiqefp73FnqkxuUsTfe`).
 deploy (`dpl_GdoLNK4tk8pYhyDxJ8HRPmB7uLHN`, `READY`), because Vercel keeps the
 last good production deployment when a build fails.
 
-**The failing build is the safety net. Do not fix it before B1.** The only
-error is a build-command override pointing at `scripts/fetch-assets.mjs`, while
-this repo has `scripts/make-assets.mjs`. Correct that filename and the build
-goes green — publishing the _older_ git copy over the live site, days before
-launch. B1 (recover the true source) must land first. See
-`apps/underdog-city/CLAUDE.md`.
+**The failing build is the safety net. Do not fix it before B1.** Two settings
+are wrong, and both would have to be corrected for a git build to succeed:
+Root Directory is unset (so the build runs at the repo root, which has no
+`package.json`), and the Build Command override calls
+`scripts/fetch-assets.mjs` while this repo has `scripts/make-assets.mjs`.
+
+Fixing only the build command fails differently and harmlessly. Fixing both —
+**exactly what B2 below used to instruct** — turns the build green and
+publishes the _older_ git copy over the live site, days before launch. B1
+(recover the true source) must land first. See `apps/underdog-city/CLAUDE.md`.
 
 Needs a decision from Shawn: leave it red through launch (safe, ugly), or
 disconnect the git integration until 08/01 (safest, one dashboard click,
@@ -107,12 +111,12 @@ removes the trap entirely).
 
 - [ ] **B2. ~~Connect `underdog-city-v5` to git.~~ Already connected — fix the
       build command instead.**
-      The connection exists (`shawn9097/Claude`, Root Directory
-      `apps/underdog-city`, Production Branch `main`). What's left is the
-      dashboard **Build Command** override: change
+      The connection exists (`shawn9097/Claude`, Production Branch `main`).
+      What's left is two settings, and doing them is what arms the trap — so
+      only after B1: set **Root Directory** = `apps/underdog-city` (currently
+      unset), and change the **Build Command** override from
       `node scripts/fetch-assets.mjs && next build` to match whatever the
-      reconciled app actually ships (this repo has `scripts/make-assets.mjs`;
-      plain `next build` also works).
+      reconciled app actually ships (plain `next build` works for this repo).
       **Only after B1.** Until then the failing build is deliberately
       protecting the live site — see the correction block at the top.
 
