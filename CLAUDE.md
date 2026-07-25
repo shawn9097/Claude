@@ -8,6 +8,22 @@ Personal multi-project workspace for Shawn (solo). Apps, APIs, scripts, and expe
 - `scripts/<name>/` — automation and one-off tooling (default stack: Python, managed with `uv`)
 - New project → its own directory with its own `CLAUDE.md` documenting that project's commands. Use `/new-project` to scaffold.
 
+## Projects
+
+Each app's own `CLAUDE.md` has status, commands, and gotchas — **read it before
+touching that app.**
+
+| App                  | What it is                                          | Live at                    | Deploy status                                                                         |
+| -------------------- | --------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------- |
+| `apps/underdog-city` | Dark-fantasy transmedia site (album **07.31.2026**) | theunderdogcity.com        | Vercel `underdog-city-v5`, CLI-deployed — **not yet git-connected; frozen until 8/1** |
+| `apps/warmside`      | Contractor estimate-follow-up SaaS                  | warmside.app (stale build) | Vercel `warmside` mis-wired to old `SBB` repo — repoint pending                       |
+| `apps/luke-mcbroom`  | Static personal-training site                       | lukemcbroom.com            | Cloudflare Pages, still deploys from the **old** repo — edits here don't go live      |
+
+These were consolidated from separate repos (`Warmside`, `SBB`,
+`luke-mcbroom-personal-training`) in July 2026; the old repos are being
+archived, not deleted. Dashboard steps to finish the move live in
+`CLEANUP_CHECKLIST.md`.
+
 ## Stack defaults
 
 - TypeScript: strict mode, npm, ESLint + Prettier, Vitest for tests
