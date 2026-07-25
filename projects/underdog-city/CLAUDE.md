@@ -19,9 +19,9 @@ Don't restate these files back at Shawn — he wrote them. Use them.
 
 ## The code and the second doc library
 
-The website lives in **`apps/underdog-city/`** (consolidated from the `SBB` repo, July 2026). Read `apps/underdog-city/CLAUDE.md` before touching it — there's a launch freeze until 08/01, and what's deployed is newer than what's in git.
+The website lives in **`apps/underdog-city/`** (consolidated from the `SBB` repo, July 2026). Read `apps/underdog-city/CLAUDE.md` before touching it — what's deployed is newer than what's in git, and the Vercel project is no longer connected to this repo.
 
-It also carries `apps/underdog-city/docs/` — the working library that came out of the SBB repo rather than Drive: `story-bible.md` (canon lore), the launch rollout and tease calendar, the tracklist, and the Suno / YouTube / release playbooks. Those are separate from the six Drive-mirrored docs above and are edited in the repo, not in Drive.
+It also carries `apps/underdog-city/docs/` — the working library that came out of the SBB repo rather than Drive: `story-bible.md` (canon lore), the tracklist, `song-themes.md`, `anime-visual-kit.md`, and the Suno / songwriting / Claude Code playbooks. The launch-planning docs that used to sit alongside them (rollout, unified launch plan, tease calendar, welcome emails, content log, release + YouTube playbooks) were deleted 2026-07-25 — over-planned, never used. Those files are separate from the six Drive-mirrored docs above and are edited in the repo, not in Drive.
 
 ## Things to get right
 
