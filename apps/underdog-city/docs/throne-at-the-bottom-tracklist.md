@@ -1,45 +1,46 @@
 # THRONE AT THE BOTTOM — Debut Album Tracklist
 
-> 14 tracks · ~47 min · the nu-metal/rap-metal arc. Lead single: **Came Back
-> Wrong** (origin-first — syncs with the novel prologue + the music video).
-> Sequenced as a concept arc: death → defiance → temptation → reckoning →
-> coronation. Opener and closer are locked; the middle is built for flow and
-> dynamics (a deliberate mid-album "dark heart" so it isn't 14 straight bangers).
+**14 tracks · all drop at once, midnight 07.31.2026 · Cenotaph Records · already
+scheduled in DistroKid.** No staggered singles.
+
+> **Source of truth:** the Google Drive folder
+> `Underdog City / Music / Finished / 01 Throne At The Bottom` — one doc per
+> track, numbered, with the finished lyrics and Suno style prompt in each.
+> Verified against Drive 2026-07-25. `projects/underdog-city/project-reference.md`
+> matches this order. If anything anywhere disagrees, Drive wins.
 
 ## Final sequence
 
-| # | Track | Story role in the arc |
-|---|---|---|
-| 1 | **Came Back Wrong** | Opener. Death & resurrection — the origin (ties to the prologue + MV). |
-| 2 | **Who TF** | Kick the door in. Immediate dominance — "I built this house." |
-| 3 | **Down Here** | The defining anthem — "I call it a throne." The world & creed. |
-| 4 | **Stupid Little Bitch** | The favorite venom banger. Keep the hooks landing. |
-| 5 | **No Saints** | Reject the Halo's gospel. *(diptych →)* |
-| 6 | **Sinners** *(Lights Go Low)* | The undercity's counter-gospel — the seductive fall. *(← diptych)* |
-| 7 | **Parasitic Love** | Toxic devotion. The dark-sensual low. |
-| 8 | **Upbeat Gospel** | The false-recovery mask cracks. Psychological turn. |
-| 9 | **Wear It Better** | Reclaim the self — "I wear this like a throne." Power returns. |
-| 10 | **Prey** | Predator energy. Becoming dangerous. |
-| 11 | **Chaos** | Embrace the storm — "you call it a mess, I call it a throne." Peak defiance. |
-| 12 | **Unwritten** | The resolve — the internal war, the land of the unwritten. |
-| 13 | **Villain** | "Villain era started." Monster on purpose; crown of thorns into gold. |
-| 14 | **Throne At The Bottom** | Coronation. Title-track closer. |
+| #   | Track                        | Style                              | The line it lives on                                               |
+| --- | ---------------------------- | ---------------------------------- | ------------------------------------------------------------------ |
+| 1   | **Villain**                  | nu metal / rap rock                | "villain era started, don't look back."                            |
+| 2   | **Down Here**                | nu / rap metal                     | "You call it rock bottom. I call it a throne." — the thesis anthem |
+| 3   | **Who TF**                   | nu / rap metal, shouted            | "who the fuck you think you talkin' to."                           |
+| 4   | **Chaos**                    | dark sensual alt R&B-metal → arena | "I thrive in the chaos."                                           |
+| 5   | **Stupid Little Bitch**      | rap / nu metal                     | raw, confrontational breakup rage                                  |
+| 6   | **Lights Go Low**            | dark sensual alt R&B-metal         | "we're all sinners when the lights go low."                        |
+| 7   | **No Saints**                | nu / rap metal                     | "no saints, no savior, no grave" — Church rejection                |
+| 8   | **Upbeat Gospel**            | alt metal / metalcore              | bright hook over dark abandonment                                  |
+| 9   | **The Old Song (Unwritten)** | aggressive trap-metal              | "the sun won't rise in the land of the unwritten."                 |
+| 10  | **The Truth**                | nu / rap metal                     | "the truth nails me to the floor."                                 |
+| 11  | **Parasitic Love**           | dark sensual alt R&B-metal         | "you use me, take my light, but you let me die."                   |
+| 12  | **Came Back Wrong**          | alt metal / metalcore              | resurrection-revenge — "I came back wrong."                        |
+| 13  | **Throne At The Bottom**     | title track, nu / rap metal        | "I got a throne at the bottom and I'm sittin' on top of it."       |
+| 14  | **Apathy vs. Agony**         | alt metal / metalcore              | "at least I still feel hurt."                                      |
 
-## The throne-and-gold spine
-The album's thesis recurs and escalates across: **Down Here (3) → Wear It Better
-(9) → Chaos (11) → Villain (13) → Throne at the Bottom (14)** — each a stronger
-claim on the throne, resolving in the coronation. Villain's "crown of thorns
-turned to gold" is the **kintsugi/gild magic** (story bible §5) stated in song.
+## Anchors
 
-## Rollout — SUPERSEDED (see `docs/launch-rollout.md`)
-The strategy evolved: the whole album now drops **July 31 as one moment — no
-early single**. **"Lights Go Low"** is the pitched editorial/Release-Radar focus
-track; the **title track (Throne at the Bottom)** is the email-vault reward.
-Content-wise, lead discovery with **Villain, Down Here, Who TF** (keep Stupid
-Little Bitch off short-form for brand safety). Full plan: `docs/launch-rollout.md`.
+- **Brand anchor track:** _Throne At The Bottom_ — the searchable, thesis-carrying
+  marquee, and the title of the record.
+- **First music video (pilot):** _Throne At The Bottom_. Shortest track (2:34 =
+  fewest scenes, most learnable first attempt), brand anchor, catchiest.
+- **Next content spearheads after the pilot:** _Down Here_, then _Came Back Wrong_.
+- **Keep off short-form:** _Stupid Little Bitch_ — brand safety, not quality.
 
-## Notes
-- Sequence is the working order; reorder freely — it's a starting point, not a vow.
-- The mid-album movement (6–8: Sinners · Parasitic Love · Upbeat Gospel) is the
-  intentional dynamic dip. If it sags on a listen-through, the easiest fix is to
-  lift Prey (10) up between them to inject aggression.
+## Note on older versions of this file
+
+An earlier draft of this doc listed a different 14 — it invented **Wear It
+Better** and **Prey**, dropped **The Truth** and **Apathy vs. Agony**, and put
+_Came Back Wrong_ at track 1. None of that was real. It also carried a rollout
+section pointing at a launch plan that no longer exists. The table above is the
+album.

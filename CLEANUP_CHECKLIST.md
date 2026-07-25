@@ -12,47 +12,31 @@ Two rules baked into the ordering:
 
 ---
 
-## 🛑 Correction — 2026-07-25: rule 1 is already being violated
+## ✅ Resolved — 2026-07-25: the deploy trap is gone
 
-This checklist assumed `underdog-city-v5` was CLI-only and that connecting it
-to git was a future step (B2). **It is already connected** to
-`shawn9097/Claude` with production branch `main` — verified via the Vercel API
-2026-07-25. The merge of PR #4 fired a **production** build at 04:37 UTC that
-ended in **ERROR** (`dpl_Ca2N5Psp8eiqefp73FnqkxuUsTfe`).
+An earlier version of this file carried a long correction block: it had turned
+out `underdog-city-v5` **was** connected to `shawn9097/Claude` on branch
+`main`, so merges were firing production builds against the live album site,
+and those builds were failing in a way that happened to be protecting it.
 
-`theunderdogcity.com` is fine right now — it still serves the 2026-07-14 CLI
-deploy (`dpl_GdoLNK4tk8pYhyDxJ8HRPmB7uLHN`, `READY`), because Vercel keeps the
-last good production deployment when a build fails.
+**Shawn disconnected the git integration entirely on 2026-07-25.** The site is
+live and works fine, still serving the 2026-07-14 CLI deploy. Nothing in this
+repo can reach production now. No decision is pending and nothing needs to be
+left deliberately broken.
 
-**The failing build is the safety net. Do not fix it before B1.** Two settings
-are wrong, and both would have to be corrected for a git build to succeed:
-Root Directory is unset (so the build runs at the repo root, which has no
-`package.json`), and the Build Command override calls
-`scripts/fetch-assets.mjs` while this repo has `scripts/make-assets.mjs`.
-
-Fixing only the build command fails differently and harmlessly. Fixing both —
-**exactly what B2 below used to instruct** — turns the build green and
-publishes the _older_ git copy over the live site, days before launch. B1
-(recover the true source) must land first. See `apps/underdog-city/CLAUDE.md`.
-
-Needs a decision from Shawn: leave it red through launch (safe, ugly), or
-disconnect the git integration until 08/01 (safest, one dashboard click,
-removes the trap entirely).
+The one thing that survives from that episode: **the git copy in
+`apps/underdog-city` is older than what's live.** So B1 below still matters —
+reconnecting git before reconciling would publish the stale copy over a working
+site.
 
 ---
 
 ## A. Safe now (before 07/31)
 
-- [ ] **A0. Confirm a stranger can load theunderdogcity.com.**
-      Private/incognito window, or your phone on cellular with wifi off. You
-      should get the site itself — no login screen, no "Authentication
-      Required", no redirect containing `_vercel_share`.
-      _If it asks for a login: Vercel → `underdog-city-v5` → Settings →
-      Deployment Protection → turn it off for Production._
-      _Why this is first: it's 30 seconds and it's the only item where the
-      failure mode is "nobody can reach the site on launch night." Claude
-      can't check this — outbound requests from the cloud session are blocked
-      by network policy, so this one genuinely needs your eyes._
+- [x] **A0. Confirm a stranger can load theunderdogcity.com.** — **Done
+      2026-07-25.** Shawn confirmed the site is live and working. He also
+      disconnected `underdog-city-v5` from git in the process, which removed
+      the failing-build situation described above.
 
 - [ ] **A1. Remove the stale apex claim.**
       Vercel → `underdogcity` (the OLD project, not v5) → Settings → Domains →
@@ -99,7 +83,7 @@ removes the trap entirely).
       Warmside builds from the monorepo now, and the UC app + docs + /post
       skill were copied into `apps/underdog-city`._
 
-## B. After 08/01 (Underdog City)
+## B. After 08/01 (Underdog City) — no rush, nothing is on fire
 
 - [ ] **B1. Recover the live site's true source.**
       Vercel → `underdog-city-v5` → Deployments → the July 14 production
@@ -109,16 +93,14 @@ removes the trap entirely).
       Cenotaph Records footer). Download it / point a Claude session at it to
       reconcile into `apps/underdog-city`.
 
-- [ ] **B2. ~~Connect `underdog-city-v5` to git.~~ Already connected — fix the
-      build command instead.**
-      The connection exists (`shawn9097/Claude`, Production Branch `main`).
-      What's left is two settings, and doing them is what arms the trap — so
-      only after B1: set **Root Directory** = `apps/underdog-city` (currently
-      unset), and change the **Build Command** override from
-      `node scripts/fetch-assets.mjs && next build` to match whatever the
-      reconciled app actually ships (plain `next build` works for this repo).
-      **Only after B1.** Until then the failing build is deliberately
-      protecting the live site — see the correction block at the top.
+- [ ] **B2. Reconnect `underdog-city-v5` to git — only after B1.**
+      The integration was disconnected 2026-07-25, so this is a fresh connect:
+      `shawn9097/Claude`, Production Branch `main`, **Root Directory** =
+      `apps/underdog-city`, and a **Build Command** that matches the reconciled
+      app (plain `next build` works for this repo — the old dashboard override
+      called a `scripts/fetch-assets.mjs` that doesn't exist here).
+      **Only after B1**, or the first green build publishes the stale copy over
+      the working site.
 
 - [ ] **B3. Archive the old `underdogcity` Vercel project** (apex was already
       removed in A1; nothing references it anymore).
