@@ -14,7 +14,7 @@ command -v typescript-language-server >/dev/null 2>&1 || npm install -g typescri
 command -v pyright-langserver >/dev/null 2>&1 || npm install -g pyright >/dev/null 2>&1 || true
 
 # Per-project dependencies for any top-level project that has them
-for dir in . apps/* scripts/*; do
+for dir in . apps/* scripts/* projects/*; do
   [ -d "$dir" ] || continue
   if [ -f "$dir/package.json" ] && [ ! -d "$dir/node_modules" ]; then
     (cd "$dir" && npm install --no-audit --no-fund >/dev/null 2>&1) || true

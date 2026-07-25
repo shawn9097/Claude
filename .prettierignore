@@ -1,0 +1,17 @@
+# Mirrored from Google Drive — keep byte-identical so /sync-context can detect
+# real drift instead of formatting noise. Do not format these.
+context/
+projects/underdog-city/goals.md
+projects/underdog-city/project-reference.md
+projects/underdog-city/brand-identity.md
+projects/underdog-city/content-engine.md
+projects/underdog-city/flow-music-video-method.md
+projects/underdog-city/discovery-questions.md
+
+# Build output
+node_modules/
+dist/
+build/
+.next/
+out/
+coverage/
