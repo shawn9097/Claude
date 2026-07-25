@@ -34,9 +34,14 @@ The gap is understanding, so the job is explanation, not output. Concretely:
 
 Nothing here goes live, gets deployed, gets emailed, or gets posted without Shawn saying so explicitly. That applies double while he's still deciding whether he stands behind it.
 
+## Where the code is
+
+**`apps/warmside/`** — consolidated in from the `Warmside` repo, July 2026. Read `apps/warmside/CLAUDE.md` for the route-by-route breakdown, the env vars, and the build gotcha.
+
+Answering "is it deployable today": the code builds clean. What's broken is the wiring — the `warmside` Vercel project is pointed at the wrong repo (`SBB`), so every build there has failed and warmside.app is serving a months-old build. Repointing it is step A5 in `CLEANUP_CHECKLIST.md`. **Nothing about the product is blocked on code right now; it's blocked on one dashboard change and on Shawn deciding he stands behind it.**
+
 ## Open
 
-- Where does the code live? It isn't in this repo yet.
-- Is it actually deployable today, or is there work left?
-- Where did the stats come from?
+- Where did the stats come from? (48% / 8% / $8,400 — unsourced, and saying them unsourced is part of what makes the pitch feel unsafe.)
 - Is there one contractor he could put on it free to see it work?
+- Is Warmside a live product or a waitlist page? Nothing downstream can be decided until that's said out loud.

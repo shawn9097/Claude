@@ -17,6 +17,12 @@ Dark-fantasy music world → serial → community → anime. Shawn's main projec
 
 Don't restate these files back at Shawn — he wrote them. Use them.
 
+## The code and the second doc library
+
+The website lives in **`apps/underdog-city/`** (consolidated from the `SBB` repo, July 2026). Read `apps/underdog-city/CLAUDE.md` before touching it — there's a launch freeze until 08/01, and what's deployed is newer than what's in git.
+
+It also carries `apps/underdog-city/docs/` — the working library that came out of the SBB repo rather than Drive: `story-bible.md` (canon lore), the launch rollout and tease calendar, the tracklist, and the Suno / YouTube / release playbooks. Those are separate from the six Drive-mirrored docs above and are edited in the repo, not in Drive.
+
 ## Things to get right
 
 - **Two voices.** The King is _seen_, the man is _heard_. Fan-facing captions, replies, emails = Kazo/Shawn's real voice (see `context/how-i-talk.md`). In-world copy, lyrics, hype = the Crowned King, dark and mythic. Don't mix them in one piece.
