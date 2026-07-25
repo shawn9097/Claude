@@ -39,7 +39,7 @@ $(printf '%s' "$out" | tail -n 30)"
   fi
 }
 
-for dir in . apps/* scripts/*; do
+for dir in . apps/* scripts/* projects/*; do
   [ -d "$dir" ] || continue
   [ -f "$dir/package.json" ] && run_node_tests "$dir"
   { [ -f "$dir/pyproject.toml" ] || [ -f "$dir/pytest.ini" ]; } && run_python_tests "$dir"
