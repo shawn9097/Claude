@@ -1,10 +1,12 @@
 # Luke McBroom
 
-> **Unconfirmed.** Everything below was read off lukemcbroom.com on 2026-07-24 because Shawn sent the link as context. Nobody has confirmed what his relationship to it is — client, friend, partner, or reference. **Ask before doing work here.** Once he says, replace this banner with the real answer.
+Shawn's **first client**, and his best friend. Luke is a personal trainer in Cookeville TN, online and in-person. Shawn built lukemcbroom.com with Claude.
 
-lukemcbroom.com — personal trainer, Cookeville TN and online. ISSA certified, 10+ years. Brands his approach as "The Luke Method."
+This one matters beyond the money — it's the proof that Shawn can build and deliver for a real client. Treat it that way.
 
-## Offers
+## The business
+
+ISSA certified, 10+ years. Brands his approach as "The Luke Method."
 
 | Offer                                                    | Price                                                    |
 | -------------------------------------------------------- | -------------------------------------------------------- |
@@ -14,8 +16,18 @@ lukemcbroom.com — personal trainer, Cookeville TN and online. ISSA certified, 
 
 Top of funnel: free 15-minute call, plus a "Fat Loss Blueprint" lead magnet.
 
-## Open questions for Shawn
+## Voice
 
-1. Is this a client, a friend, a partnership, or just an example you liked?
-2. If client work — what's the scope? Content, site, ads, email?
-3. Does his voice differ from yours? If Claude writes as Luke, whose voice wins?
+This is **Luke's** brand, not Underdog City. Nothing dark-fantasy, nothing in-world. Write as a trainer talking to someone who's nervous about starting: warm, plain, encouraging, zero hype and zero shame.
+
+When Luke's voice and Shawn's default voice conflict, **Luke wins** — it's his name on it. But Shawn's rules about never sounding AI-generated still apply everywhere.
+
+## Working on this
+
+Shawn knows this domain because he knows Luke. That's an advantage — when something's unclear about the offers, the customer, or the tone, **ask Shawn, he can just text him.** Don't guess and don't invent fitness claims.
+
+## Open
+
+- Scope of the ongoing relationship — is this a one-time build or continuing work (content, ads, email)?
+- Is Luke paying, trading, or is this a favor that became a portfolio piece?
+- Is there a repo for the site, or was it built somewhere else?
